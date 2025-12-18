@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add New Product</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+    <div class="container">
+        <h1>Add New Product</h1>
+
+        <form action="/products" method="post">
+            <label for="name">Product Name</label>
+            <input type="text" id="name" name="name" required />
+
+            <label for="code">Product Code</label>
+            <input type="text" id="code" name="code" required />
+
+            <label for="type">Product Type</label>
+            <input type="text" id="type" name="type" required />
+
+            <label for="company">Company</label>
+            <input type="text" id="company" name="company" />
+
+            <label for="expiryDate">Expiry Date</label>
+            <input type="date" id="expiryDate" name="expiryDate" />
+
+            <button type="submit">Add Product</button>
+        </form>
+        <a href="/products" class="link" style="display: block; text-align: center; margin-top: 20px;">Back to Product List</a>
+    </div>
+</body>
+</html>

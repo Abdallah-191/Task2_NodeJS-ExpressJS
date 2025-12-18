@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* ===== Global Styles ===== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --bg-color: #1a1a1a;
+    --surface-color: #2a2a2a;
+    --primary-color: #00aaff;
+    --text-color: #e0e0e0;
+    --border-color: #444;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 40px 20px;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+/* ===== Container ===== */
+.container {
+    padding: 40px 50px;
+    border-radius: 15px;
+    background-color: var(--surface-color);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    max-width: 1200px;
+    width: 100%;
+    text-align: center;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+h1 {
+    font-size: 32px;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 30px;
+}
+
+/* ===== Form Styles ===== */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    width: 100%;
+    text-align: left;
+}
+
+label {
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+input, select, #membershipType {
+    padding: 12px 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: all 0.3s ease;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+}
+
+input:focus, select:focus, #membershipType:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 8px rgba(0, 170, 255, 0.5);
+    outline: none;
+}
+
+button {
+    background: var(--primary-color);
+    color: #fff;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+}
+
+button:hover {
+    background: #0088cc;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 170, 255, 0.3);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* ===== Table Styles ===== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+thead {
+    background: var(--primary-color);
+    color: #fff;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+tbody tr {
+    transition: background-color 0.3s ease;
+}
+
+tbody tr:hover {
+    background-color: #333;
+}
+
+th {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+td {
+    font-size: 15px;
+}
+
+td form {
+    display: inline-flex;
+    margin: 0;
+    align-items: center;
+}
+
+td button {
+    padding: 8px 15px;
+    font-size: 14px;
+    margin: 0;
+    background-color: #c0392b;
+}
+
+td button:hover {
+    background-color: #e74c3c;
+    box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+}
+
+
+/* ===== Links & Auth Specific ===== */
+.link, .auth-link {
+    display: inline-block;
+    margin-top: 20px;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.link:hover, .auth-link:hover {
+    color: #0088cc;
+    text-decoration: underline;
+}
+
+.auth-container {
+    margin-top: 10vh;
+}
+
+.error-msg {
+    color: #e74c3c;
+    margin-top: 15px;
+    font-weight: 500;
+}
+
+/* ===== Success Page Styles ===== */
+.success-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    text-align: center;
+}
+
+.success-container h1 {
+    color: #2ecc71;
+    font-size: 28px;
+}
+
+/* ===== Animated Checkmark ===== */
+.checkmark { width: 80px; height: 80px; }
+.checkmark__circle { stroke: #2ecc71; stroke-width: 3; stroke-dasharray: 166; stroke-dashoffset: 166; stroke-linecap: round; animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards; }
+.checkmark__check { transform-origin: 50% 50%; stroke: #2ecc71; stroke-width: 3; stroke-dasharray: 48; stroke-dashoffset: 48; stroke-linecap: round; animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.6s forwards; }
+@keyframes stroke { 100% { stroke-dashoffset: 0; } }
+@keyframes scale { 0%, 100% { transform: none; } 50% { transform: scale(1.1); } }
+.checkmark svg { animation: scale 0.3s ease-in-out 0.9s both; }
+
+/* ===== Search Form ===== */
+#searchForm {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+#searchForm input {
+    flex-grow: 1;
+}
+
+#searchForm button {
+    margin-top: 0;
+    white-space: nowrap;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+    body { padding: 20px 10px; }
+    .container { padding: 25px; }
+    h1 { font-size: 26px; }
+    table, #searchForm { font-size: 14px; }
+    th, td { padding: 12px; }
+    td button { padding: 6px 10px; }
+}
